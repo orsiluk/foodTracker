@@ -80,8 +80,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nyr-WE-eAb">
-                                <rect key="frame" x="20" y="84" width="374" height="416"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nyr-WE-eAb">
+                                <rect key="frame" x="20" y="84" width="374" height="410"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter meal name" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MBZ-WZ-i8u">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
@@ -99,8 +99,8 @@
                                             <outletCollection property="gestureRecognizers" destination="DBe-ae-mVB" appends="YES" id="fZL-Cx-auB"/>
                                         </connections>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CKp-Cf-8OZ" userLabel="RatingControl" customClass="RatingControl" customModule="FoodTracker" customModuleProvider="target">
-                                        <rect key="frame" x="61" y="366" width="252" height="50"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CKp-Cf-8OZ" userLabel="RatingControl" customClass="RatingControl" customModule="FoodTracker" customModuleProvider="target">
+                                        <rect key="frame" x="61" y="366" width="252" height="44"/>
                                     </stackView>
                                 </subviews>
                                 <constraints>
@@ -129,6 +129,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="RatingControl" destination="CKp-Cf-8OZ" id="S55-wG-dwe"/>
+                        <outlet property="cancelButt" destination="k77-Oh-LLk" id="ZCU-sX-hrA"/>
                         <outlet property="nameTextField" destination="MBZ-WZ-i8u" id="P43-nH-Ium"/>
                         <outlet property="photoImageView" destination="Ayk-o8-ehY" id="9F4-JD-tMq"/>
                         <outlet property="saveButton" destination="mlb-io-Bc4" id="J7y-4N-KuD"/>
