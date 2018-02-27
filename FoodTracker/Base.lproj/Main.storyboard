@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Your Meals-->
+        <!--Your Paintings-->
         <scene sceneID="Yq8-Ou-1I5">
             <objects>
                 <tableViewController id="9vI-sC-WqU" customClass="MealTableViewController" customModule="FoodTracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -56,7 +56,7 @@
                             <outlet property="delegate" destination="9vI-sC-WqU" id="VJS-R7-tyL"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Your Meals" id="jEd-u2-ZIY">
+                    <navigationItem key="navigationItem" title="Your Paintings" id="jEd-u2-ZIY">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="N9n-9h-2m9">
                             <connections>
                                 <segue destination="lr6-Me-Dyp" kind="presentation" identifier="AddItem" id="S3s-b8-jg2"/>
@@ -68,7 +68,7 @@
             </objects>
             <point key="canvasLocation" x="140.57971014492756" y="130.43478260869566"/>
         </scene>
-        <!--New Meal-->
+        <!--New Painting-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MealViewController" customModule="FoodTracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -81,16 +81,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nyr-WE-eAb">
-                                <rect key="frame" x="20" y="84" width="374" height="410"/>
+                                <rect key="frame" x="20" y="84" width="374" height="329"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter meal name" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MBZ-WZ-i8u">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter painting name" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MBZ-WZ-i8u">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="31"/>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
-                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="Ayk-o8-ehY">
-                                        <rect key="frame" x="27" y="38" width="320" height="320"/>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="200" placeholderIntrinsicHeight="200" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="Ayk-o8-ehY">
+                                        <rect key="frame" x="87" y="39" width="200" height="200"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Ayk-o8-ehY" secondAttribute="height" multiplier="1:1" id="Lwx-5U-6d2"/>
@@ -100,8 +100,14 @@
                                         </connections>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CKp-Cf-8OZ" userLabel="RatingControl" customClass="RatingControl" customModule="FoodTracker" customModuleProvider="target">
-                                        <rect key="frame" x="61" y="366" width="252" height="44"/>
+                                        <rect key="frame" x="61" y="247" width="252" height="44"/>
                                     </stackView>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter information about painting" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TIo-al-ilD">
+                                        <rect key="frame" x="72.666666666666686" y="299" width="229" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                    </textField>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="MBZ-WZ-i8u" secondAttribute="trailing" id="Ov8-Oc-bn2"/>
@@ -115,7 +121,7 @@
                             <constraint firstItem="nyr-WE-eAb" firstAttribute="top" secondItem="MMR-9G-qqZ" secondAttribute="bottom" constant="20" id="uyB-Ny-95c"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="New Meal" id="kh3-RF-Hp4">
+                    <navigationItem key="navigationItem" title="New Painting" id="kh3-RF-Hp4">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="k77-Oh-LLk">
                             <connections>
                                 <action selector="cancel:" destination="BYZ-38-t0r" id="8WH-KJ-FBp"/>
@@ -129,7 +135,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="RatingControl" destination="CKp-Cf-8OZ" id="S55-wG-dwe"/>
-                        <outlet property="cancelButt" destination="k77-Oh-LLk" id="ZCU-sX-hrA"/>
+                        <outlet property="addContent" destination="TIo-al-ilD" id="0YE-se-mZX"/>
                         <outlet property="nameTextField" destination="MBZ-WZ-i8u" id="P43-nH-Ium"/>
                         <outlet property="photoImageView" destination="Ayk-o8-ehY" id="9F4-JD-tMq"/>
                         <outlet property="saveButton" destination="mlb-io-Bc4" id="J7y-4N-KuD"/>

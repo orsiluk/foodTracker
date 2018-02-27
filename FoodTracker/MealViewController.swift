@@ -17,6 +17,8 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var ratingControl: RatingControl!
     
+    @IBOutlet weak var addContent: UITextField!
+    
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
     /*
@@ -31,6 +33,9 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         // To set the ViewController object as the delegate of its nameTextField property
         // Handle the text field’s user input through delegate callbacks.
         nameTextField.delegate = self
+        nameTextField.tag = 0
+        addContent.delegate = self
+        addContent.tag = 1
         // Make sure ViewController is notified when the user picks an image.
         
         // Set up views if editing an existing Meal.
@@ -39,6 +44,7 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
             nameTextField.text   = meal.name
             photoImageView.image = meal.photo
             ratingControl.rating = meal.rating
+            addContent.text = meal.content
         }
         
         // Enable the Save button only if the text field has a valid Meal name.
@@ -55,7 +61,9 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         updateSaveButtonState()
-        navigationItem.title = textField.text
+        if textField.tag == 0 {
+            navigationItem.title = textField.text
+        }
     }
     
     //disable the Save button when there’s no item name
@@ -111,9 +119,10 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         let name = nameTextField.text ?? ""
         let photo = photoImageView.image
         let rating = ratingControl.rating
+        let content = addContent.text ?? ""
         
         // Set the meal to be passed to MealTableViewController after the unwind segue.
-        meal = Meal(name: name, photo: photo, rating: rating)
+        meal = Meal(name: name, photo: photo, rating: rating, content: content)
         
     }
     
@@ -133,7 +142,9 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         // UIImagePickerController is a view controller that lets a user pick media from their photo library.
         let imagePickerController = UIImagePickerController()
         print("start picker")
-        imagePickerController.sourceType = .photoLibrary // This line of code sets the image picker controller’s source, or the place where it gets its images. The .photoLibrary option uses the simulator’s camera roll.
+//        imagePickerController.sourceType = .photoLibrary // This line of code sets the image picker controller’s source, or the place where it gets its images. The .photoLibrary option uses the simulator’s camera roll.
+        imagePickerController.sourceType = UIImagePickerControllerSourceType.camera
+        imagePickerController.cameraCaptureMode = .photo
         imagePickerController.delegate = self
         print("picked")
         present(imagePickerController, animated: true, completion: nil)

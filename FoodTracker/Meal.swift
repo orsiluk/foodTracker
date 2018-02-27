@@ -17,9 +17,10 @@ class Meal{
     var name: String
     var photo: UIImage? //Optional
     var rating: Int
+    var content: String?
     
     // Initializing
-    init?(name: String, photo: UIImage?, rating: Int){ // Because of ? it is a failable initializer
+    init?(name: String, photo: UIImage?, rating: Int, content: String?){ // Because of ? it is a failable initializer
         // Initialization should fail if there's no name or rating is negative
         
         if name.isEmpty {
@@ -34,6 +35,7 @@ class Meal{
         self.name = name
         self.photo = photo
         self.rating = rating
+        self.content = content
     }
     
 }
